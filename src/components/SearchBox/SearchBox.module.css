@@ -1,0 +1,15 @@
+.searchForm{
+  display: inline-flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+  
+
+
+.searchInput{
+  padding: 8px 32px 8px 8px;
+    border-radius: 4px;
+    font: inherit;
+}

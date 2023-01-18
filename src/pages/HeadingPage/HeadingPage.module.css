@@ -1,0 +1,11 @@
+.title {
+    padding: 8px;
+    margin-top: 0;
+    border-radius: 8px;
+    color: #4158D0;
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+    background-color: #D9AFD9;
+        background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+}
