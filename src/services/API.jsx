@@ -21,11 +21,11 @@ export function getMovieDetails(movieId) {
 export function getMovieDetailsCast(movieId) {
   return fetch(`${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}`)
       .then(res => res.json())
-      .then(res => res.results);
+      .then(res => res.cast);
 };
 
 export function getMovieDetailsReviews(movieId) {
   return fetch(`${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}`)
-      .then(res => res.json())
-      .then(res => res.results);
+    .then(res => res.json())
+  
 };

@@ -7,6 +7,9 @@ import s from './SearchBox.module.css';
       <input
         type="text"
         value={value}
+        autoComplete="off"
+        placeholder="Search movies"
+        required
         onChange={(e) => onChange(e.target.value)}
         className={s.searchInput}
       />

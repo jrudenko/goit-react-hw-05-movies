@@ -68,7 +68,7 @@ function MovieDetailsPage() {
             style={({ isActive }) => (isActive ? activeClassName : undefined)}
             state={location.state}
           >
-            <p className={s.reviews}>Reviews</p>
+            <button className={s.backButton}>Reviews</button>
           </NavLink>
 
           <NavLink
@@ -76,7 +76,7 @@ function MovieDetailsPage() {
             style={({ isActive }) => (isActive ? activeClassName : undefined)}
             state={location.state}
           >
-            <p className={s.cast}>Cast</p>
+            <button className={s.backButton}>Cast</button>
           </NavLink>
           <hr />
           <Outlet />
