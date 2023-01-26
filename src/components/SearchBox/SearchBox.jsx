@@ -1,29 +1,50 @@
 import s from './SearchBox.module.css';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 
+const SearchBox = ({ onChange }) => {
+  const [searchQuery, setSearchQuery] = useState('');
 
- const SearchBox = ({ value, onChange}) => {
+  const handleQuerySearch = e => {
+    setSearchQuery(e.target.value.toLowerCase());
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (searchQuery.trim() === '') {
+      alert('Enter the film title');
+    }
+
+    onChange(searchQuery);
+    setSearchQuery('');
+  };
+
   return (
-    <form className={s.searchForm} >
-      
-      <input
-        type="text"
-        value={value}
-        autoComplete="off"
-        placeholder="Search movies"
-        required
-        onChange={(e) => onChange(e.target.value)}
-        className={s.searchInput}
-      />
+    <>
+      <form onSubmit={handleSubmit} className={s.searchForm} >
+        <input
+          type="text"
+          name="searchQuery"
+          value={searchQuery}
+          autoComplete="off"
+          autoFocus
+          placeholder="Search movies ..."
+          onChange={handleQuerySearch}
+           className={s.searchInput}
+        />
         <button
-          type="submit"         
+          type="submit"
           className={s.searchButton}
         >
           Search
         </button>
-    </form>
+      </form>
+    </>
   );
 };
 
- 
+SearchBox.propTypes = {
+  onChange: PropTypes.func.isRequired,
+};
 
 export default SearchBox;
